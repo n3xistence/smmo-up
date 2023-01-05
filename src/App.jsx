@@ -11,7 +11,7 @@ function App() {
     <>
       <Menu />
       <div className="h-full w-full bg-gray-500">
-        <Display user={{ id: "261266" }} />
+        <Display />
       </div>
     </>
   );

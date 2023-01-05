@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Display.css'
 
 function Display() {
+    const [userID, setUserID] = useState("nothing");
+
     document.addEventListener('emit', ({ detail }) => {
-        console.log(`Received ${detail}`)
+        let { id } = detail;
+        setUserID(id);
     })
 
     return(
-        <div className="p-5">
-          In Here Goes My Content!
+        <div className="p-5 top-0">
+          User: {userID}
         </div>
     )
 }
