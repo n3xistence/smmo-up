@@ -10,7 +10,7 @@ function Display() {
     })
 
     return(
-        <div className="absolute p-5 top-12 text-white">
+        <div className="absolute p-5 top-12 text-white z-1">
             User: {userID}
         </div>
     )
