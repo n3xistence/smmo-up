@@ -22,7 +22,7 @@ function Menu() {
   }
 
   return ( 
-    <div className="relative inline-block h-[50px] w-full m-0 p-0 bg-[#64c5b1]">
+    <div className="absolute inline-block h-[50px] w-full m-0 p-0 bg-[#64c5b1]">
       <button
         id="menu-toggle"
         onClick={() => {
@@ -59,12 +59,6 @@ function Menu() {
           </a>
         </div>
       </CSSTransition>
-      {/* <div
-        id="app-name" 
-        className="inline-block h-full py-[14px] px-[11px] w-[40%] overflow-hidden align-middle text-white"
-      >
-          SMMO Player Data
-      </div> */}
       <div
         id="input-box"
         className="align-middle h-full py-[5px] w-[80%] inline-block float-right"

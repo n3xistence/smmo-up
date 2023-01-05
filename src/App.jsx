@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Menu from './components/Menu/Menu'
 import Display from './components/Display/Display'
-
-const handleEmit = () => {
-  console.log("emited")
-}
 
 function App() {
   return (
