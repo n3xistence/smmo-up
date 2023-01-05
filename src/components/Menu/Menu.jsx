@@ -14,6 +14,11 @@ function Menu() {
   const [inputValue, setInputValue] = useState('');
   const event = new CustomEvent('emit', { detail: { id: inputValue } });
 
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+    transformButton();
+  }
+
   const handleChange = (e) => setInputValue(e.target.value);
 
   const handleSubmit = (e) => {
@@ -25,10 +30,7 @@ function Menu() {
     <div className="absolute inline-block h-[50px] w-full m-0 p-0 bg-[#64c5b1]">
       <button
         id="menu-toggle"
-        onClick={() => {
-            setIsOpen(!isOpen);
-            transformButton();
-        }}
+        onClick={handleClick}
         className="inline-block h-full w-[50px] px-[6px] text-base font-medium bg-[#64c5b1] hover:bg-[#54a594] focus:outline-none float-left"
       >
         <div id="toggle-icon">
@@ -38,26 +40,29 @@ function Menu() {
         </div>
       </button>
       <CSSTransition in={isOpen} timeout={300} classNames="slide-in-menu" unmountOnExit>
-        <div className="fixed left-0 h-[100vh] w-48 bg-gray-700 rounded-r top-[50px]">
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm leading-5 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-100 rounded-tr"
-          >  
-            Home
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm leading-5 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-100"
-          >
-            Profile
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm leading-5 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-100"
-          >
-            Settings
-          </a>
+      <div id="menu"
+        class="fixed left-0 h-[100vh] w-48 bg-gray-700 rounded-r top-[50px]">
+        <div
+          class="cursor-pointer text-sm text-white p-[10px] w-[100%] h-[50px] rounded-bl-lg border-b-[3px] border-[#2c313e] hover:bg-[#2c313e] hover:rounded-r"
+          id="home-menu-item">
+          <i class="fa-solid fa-house !w-[25px]"></i>Home
         </div>
+        <div
+          class="cursor-pointer text-sm text-white p-[10px] w-[100%] h-[50px] rounded-bl-lg border-b-[3px] border-[#2c313e] hover:bg-[#2c313e]"
+          id="stats-menu-item">
+          <i class="fa-solid fa-chart-column !w-[25px]"></i>Stats
+        </div>
+        <div
+          class="cursor-pointer text-sm text-white p-[10px] w-[100%] h-[50px] rounded-bl-lg border-b-[3px] border-[#2c313e] hover:bg-[#2c313e]"
+          id="users-menu-item">
+          <i class="fa-solid fa-user !w-[25px]"></i>Users
+        </div>
+        <div
+          class="absolute bottom-[50px] cursor-pointer text-sm text-white p-[10px] w-[100%] h-[50px] rounded-bl-lg border-b-[3px] border-[#2c313e] hover:bg-[#2c313e]"
+          id="settings-menu-item">
+          <i class="fa-solid fa-screwdriver-wrench !w-[25px]"></i>Settings
+        </div>
+      </div>
       </CSSTransition>
       <div
         id="input-box"

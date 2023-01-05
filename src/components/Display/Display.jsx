@@ -5,13 +5,13 @@ function Display() {
     const [userID, setUserID] = useState("nothing");
 
     document.addEventListener('emit', ({ detail }) => {
-        let { id } = detail;
+        const { id } = detail;
         setUserID(id);
     })
 
     return(
-        <div className="p-5 top-0">
-          User: {userID}
+        <div className="absolute p-5 top-12 text-white">
+            User: {userID}
         </div>
     )
 }
