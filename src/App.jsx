@@ -5,7 +5,8 @@ function App() {
   return (
     <>
       <Menu />
-      Hello
+      <div className="h-full w-full bg-gray-500">
+      </div>
     </>
   );
 }

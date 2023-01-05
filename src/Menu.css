@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#menu-toggle-bar1, #menu-toggle-bar2, #menu-toggle-bar3 {
+#menu-toggle-bar1,
+#menu-toggle-bar2,
+#menu-toggle-bar3 {
     width: 35px;
     height: 5px;
     background-color: #fff;
@@ -25,4 +27,22 @@
 
 .change #menu-toggle-bar3 {
     transform: translate(0, -11px) rotate(45deg);
+}
+
+.slide-in-menu-enter {
+    transform: translateX(-100%);
+}
+
+.slide-in-menu-enter-active {
+    transform: translateX(0%);
+    transition: transform 300ms;
+}
+
+.slide-in-menu-exit {
+    transform: translateX(0%);
+}
+
+.slide-in-menu-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms;
 }
