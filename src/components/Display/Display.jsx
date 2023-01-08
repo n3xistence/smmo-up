@@ -16,11 +16,20 @@ function Display() {
         else setUserID(res.data)
     })
 
-    return(
+    if (userID === "nothing") {
+        return(
+            <div className="absolute p-5 top-12 text-white z-1">
+                User: Unknown
+            </div>
+        )
+    }
+    else {
+        return(
         <div className="absolute p-5 top-12 text-white z-1">
-            User: {userID}
+            User: {userID.current_data.name}
         </div>
-    )
+        )
+    }
 }
 
 export default Display;
