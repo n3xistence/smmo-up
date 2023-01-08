@@ -3,7 +3,7 @@ import './Display.css'
 import axios from 'axios';
 
 function Display() {
-    const [userID, setUserID] = useState("nothing");
+    const [userID, setUserID] = useState("unknown.");
 
     document.addEventListener('emit', async ({ detail }) => {
         const { id } = detail;
@@ -13,23 +13,17 @@ function Display() {
         } catch (e) { console.log(e) }
 
         if (res.data === "ER_NO_SUCH_TABLE") return alert('This user does not exist')
-        else setUserID(res.data)
+        else {
+            console.log(res.data)
+            setUserID(res.data.name)
+        }
     })
 
-    if (userID === "nothing") {
-        return(
-            <div className="absolute p-5 top-12 text-white z-1">
-                User: Unknown
-            </div>
-        )
-    }
-    else {
-        return(
+    return(
         <div className="absolute p-5 top-12 text-white z-1">
-            User: {userID.current_data.name}
+            User: {userID}
         </div>
-        )
-    }
+    )
 }
 
 export default Display;
