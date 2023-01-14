@@ -19,6 +19,7 @@ app.get("/api/user/:id", (req, res) => {
         }
         let dataset = {
             name: result[result.length - 1].name,
+            current_data: result[result.length -1],
             dates: [],
             steps: [],
             quests: [],

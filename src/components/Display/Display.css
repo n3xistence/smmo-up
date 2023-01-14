@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.horizontal {
+	display: flex;
+	text-align: left;
+	flex-direction: right;
+}
+
+.avatar {
+	width: 108px;
+	height: auto;
+	padding-right: 4px;
+}
